@@ -1,2 +1,3 @@
-# felwinter
-CSS and JavaScript basic framework
+# Felwinter
+
+Felwinter is a basic CSS and JavaScript basic framework for buttons
