@@ -1,12 +1,18 @@
 {
   "name": "felwinter",
   "version": "1.0.0",
-  "description": "A simple CSS/JS framework",
+  "description": "Felwinter is a basic CSS and JavaScript basic framework for buttons",
   "main": "Gruntfile.js",
   "dependencies": {
-    "node": "^0.0.0"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,10 +20,18 @@
     "type": "git",
     "url": "git+https://github.com/sero-dev/felwinter.git"
   },
-  "author": "Sero-Dev",
+  "author": "Sero-Dev <sean.rodriguez@outlook.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sero-dev/felwinter/issues"
   },
-  "homepage": "https://github.com/sero-dev/felwinter#readme"
+  "homepage": "https://github.com/sero-dev/felwinter#readme",
+  "keywords": [
+    "A",
+    "simple",
+    "CSS/JavaScript",
+    "framework",
+    "using",
+    "Grunt"
+  ]
 }
