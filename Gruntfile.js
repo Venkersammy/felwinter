@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     uglify: {
       js: {
         files: {
-          'build/js/scripts.min.js': ['src/js/scripts.js']
+          'build/scripts.min.js': ['src/js/scripts.js']
         }
       }
     },
@@ -14,12 +14,9 @@ module.exports = function(grunt) {
 
     cssmin: {
       css: {
-        files: [{
-          expand: true,
-          src: ['src/css/main.css'],
-          dest: 'build/css',
-          ext: '.min.css'
-        }]
+        files: {
+          'build/styles.min.css' : ['src/css/main.css']
+        }
       }
     },
 
