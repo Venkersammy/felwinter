@@ -29,6 +29,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       js: {
         files: ['src/js/*.js'],
         tasks: ['jshint', 'uglify'],
@@ -38,12 +41,24 @@ module.exports = function(grunt) {
         tasks: ['sass', 'cssmin'],
       },
     },
+
+    express: {
+      all: {
+        options: {
+          port: 3000,
+          hostname: 'localhost',
+          bases: ['src'],
+          livereload: true
+        }
+      }
+    }
   });
 
+  grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'watch']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'express', 'watch']);
 };
