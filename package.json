@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "grunt-contrib-cssmin": "^2.1.0",
+    "grunt-contrib-htmlmin": "^2.3.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-express": "^1.4.1"
