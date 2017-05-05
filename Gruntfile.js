@@ -40,6 +40,10 @@ module.exports = function(grunt) {
         files: ['src/css/sass/*.sass'],
         tasks: ['sass', 'cssmin'],
       },
+      html: {
+        files: ['src/*.html'],
+        tasks: ['htmlmin'],
+      }
     },
 
     express: {
@@ -47,18 +51,31 @@ module.exports = function(grunt) {
         options: {
           port: 3000,
           hostname: 'localhost',
-          bases: ['src'],
+          bases: ['build'],
           livereload: true
+        }
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'build/index.html': 'src/index.html',
         }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'express', 'watch']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'htmlmin' , 'express', 'watch']);
 };
